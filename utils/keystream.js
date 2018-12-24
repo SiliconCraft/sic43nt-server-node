@@ -105,7 +105,7 @@ const setup = (ctx, key, iv) => {
 }
 
 /* Length of keystream in bytes. */
-export const keystream = (key, iv, length) => {
+const keystream = (key, iv, length) => {
   var i
   var j
   var keystream = 0
@@ -132,7 +132,7 @@ export const keystream = (key, iv, length) => {
   return resoure.toUpperCase()
 }
 
-export const hexbit = (hex_string) => {
+const hexbit = (hex_string) => {
   var binary = ""
   var end = hex_string.length
   for (var i = 0; i < end; ++i) {
@@ -164,3 +164,6 @@ const hexdec = (hex) => {
 const reverse = (str) => {
   return str.split("").reverse().join("")
 }
+
+module.exports.keystream = keystream;
+module.exports.hexbit = hexbit;
