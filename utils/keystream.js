@@ -1,3 +1,33 @@
+/*
+ * LICENSE: The MIT License (the "License")
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * https://github.com/SiliconCraft/sic43nt-server-node/blob/master/LICENSE.txt
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @copyright 2018 Silicon Craft Technology Co.,Ltd.
+ * @license   https://github.com/SiliconCraft/sic43nt-server-node/blob/master/LICENSE.txt
+ * @link      https://github.com/SiliconCraft/sic43nt-server-node
+ 
+ * This source code is based on The stream cipher MICKEY (version 1) by Steve Babbage 
+ * and Matthew Dodd, published on April 29, 2005. The source file is mainly a direct porting 
+ * from mickey_v1.c in folder "C code MICKEY v1 faster" of 
+ * http://www.ecrypt.eu.org/stream/ciphers/mickey/mickeysource.zip which is implemented 
+ * in C language to PHP. However, there are additional function to handle string of bit 
+ * and arithmetic shift operation.
+ * 
+ * Credit #1: The first JavaScript porting is done by Tanawat Hongthai in 2017
+ * 
+ * For original information regarding to Mickey v1 algorithm, please refer to 
+ * http://www.ecrypt.eu.org/stream/ciphers/mickey/
+ *
+ */
+
 const R_Mask = [0x1d5363d5, 0x415a0aac, 0x0000d2a8]
 const Comp0 = [0x6aa97a30, 0x7942a809, 0x00003fea]
 const Comp1 = [0xdd629e9a, 0xe3a21d63, 0x00003dd7]
