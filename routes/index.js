@@ -49,7 +49,7 @@ router.get('/', function (req, res) {
             flagTamperTag = rawData.substring(14, 14 + 2);      /* Extract Tamper Flag */
             var tmp_timeStampTag = rawData.substring(16, 16 + 8);
             if (tmp_timeStampTag !== "") {                      /* Extract Time Stamp and Check the content*/
-                timeStampTag = parseInt(tmp_timeStampTag, 16).toString(16);
+                timeStampTag = parseInt(tmp_timeStampTag, 16);
 
                 /* Extract Rolling Code from Tag */ 
                 rollingCodeTag = rawData.substring(24, 24 + 8);
