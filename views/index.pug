@@ -1,0 +1,31 @@
+﻿extends layout
+
+block content
+  h1 SIC43NT Demonstration
+  table(style='width:75%', border='1')
+      tr
+        th UID[7]
+        td(colspan="3") #{uid}
+      tr
+        th Default Key
+        td(colspan="3") #{defaultKey}
+      tr
+        td -
+        td From Tag
+        td From Server
+        td Result
+      tr
+        th Tamper Flag(HEX)
+        td #{flagTamperTag}
+        td #{flagTamperServer}
+        td #{flagTamperDecision}
+      tr
+        th Time Stamp(DEC)
+        td #{timeStampTag}
+        td #{timeStampServer}
+        td #{timeStampDecision} 
+      tr
+        th Rolling code(HEX)
+        td #{rollingCodeTag}
+        td #{rollingCodeServer}
+        td #{rollingCodeDecision}     
