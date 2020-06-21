@@ -7,7 +7,7 @@ This project provides an example Node.js with Express.js project for SIC43NT rol
 * [Getting Started](#Getting-Started)
   * [Installing on Microsoft Azure Web App](#Installing-on-Microsoft-Azure-Web-App)  
   * [Installing on Google Cloud Platform](#Installing-on-Google-Cloud-Platform)
-* [Usage](##Usage)
+* [Usage](#Usage)
 
 
 ## Basic Concept of SIC43NT 
