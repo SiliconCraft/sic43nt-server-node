@@ -129,12 +129,6 @@ cd sic43nt-server-node
 npm install
 ```
 
-1. vim to change port 3000 to 8080 in app.js file:
-
-```
-vim app.js
-```
-
 1. Start the HTTP server:
 
 ```

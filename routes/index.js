@@ -26,15 +26,16 @@ var ks = require('../utils/keystream');
 router.get('/', function (req, res) {
     var rawData = "";
 
-    var uid = "";
-    var defaultKey = "";
-    var flagTamperTag = "";
-    var timeStampTag = "";
-    var rollingCodeTag = "";
+    var uid = "N/A";
+    var defaultKey = "N/A";
+    var flagTamperTag = "-";
+    var timeStampTag = "-";
+    var rollingCodeTag = "-";
 
     var flagTamperServer = "N/A";
     var timeStampServer = "N/A";
     var rollingCodeServer = "N/A";
+    var rlc;
 
     var flagTamperDecision = "N/A";
     var timeStampTagDecision = "N/A";
@@ -51,7 +52,7 @@ router.get('/', function (req, res) {
             if (tmp_timeStampTag !== "") {                      /* Extract Time Stamp and Check the content*/
                 timeStampTag = parseInt(tmp_timeStampTag, 16);
 
-                /* Extract Rolling Code from Tag */ 
+                /* Extract Rolling Code from Tag */
                 rollingCodeTag = rawData.substring(24, 24 + 8);
                 /* Calculate Rolling code from Server */
                 rollingCodeServer = ks.keystream(ks.hexbit(defaultKey), ks.hexbit(tmp_timeStampTag), 4);
@@ -60,7 +61,18 @@ router.get('/', function (req, res) {
             if (rollingCodeTag === rollingCodeServer) {
                 rollingCodeDecision = "Correct";
             } else {
-                rollingCodeDecision = "Incorrect";
+                if (flagTamperTag === "AA") {
+                    rlc = ks.keystream(ks.hexbit(defaultKey), ks.hexbit(tmp_timeStampTag), 12);
+                    rollingCodeServer = rlc.substring(16, 16 + 8);
+
+                    if (rollingCodeTag === rollingCodeServer) {
+                        rollingCodeDecision = "Correct";
+                    } else {
+                        rollingCodeDecision = "Incorrect";
+                    }
+                } else {
+                    rollingCodeDecision = "Incorrect";
+                }
             }
         }
     }
@@ -76,7 +88,7 @@ router.get('/', function (req, res) {
         timeStampServer: timeStampServer,
         timeStampDecision: timeStampTagDecision,
         rollingCodeTag: rollingCodeTag,
-        rollingCodeServer : rollingCodeServer,
+        rollingCodeServer: rollingCodeServer,
         rollingCodeDecision: rollingCodeDecision
     });
 });
