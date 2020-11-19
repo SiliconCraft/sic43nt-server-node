@@ -117,31 +117,25 @@ sudo apt-get update && sudo apt-get --only-upgrade install google-cloud-sdk-bigt
 git clone https://github.com/SiliconCraft/sic43nt-server-node.git
 ```
 
-1. Move the directory into the project folder
+2. Move the directory into the project folder
 
 ```
 cd sic43nt-server-node
 ```
 
-1. Install dependencies for the project:
+3. Install dependencies for the project:
 
 ```
 npm install
 ```
 
-1. vim to change port 3000 to 8080 in app.js file:
-
-```
-vim app.js
-```
-
-1. Start the HTTP server:
+4. Start the HTTP server:
 
 ```
 npm start
 ```
 
-1. view the app in your cloud shell toolbar, click "Web preview" and select "Preview on port 8080.".
+5. view the app in your cloud shell toolbar, click "Web preview" and select "Preview on port 8080.".
 
 #### Step 4 : Deploy and run
 
