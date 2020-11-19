@@ -62,6 +62,7 @@ router.get('/', function (req, res) {
                 rollingCodeDecision = "Correct";
             } else {
                 if (flagTamperTag === "AA") {
+                    /* for tags that can setting secure tamper */
                     rlc = ks.keystream(ks.hexbit(defaultKey), ks.hexbit(tmp_timeStampTag), 12);
                     rollingCodeServer = rlc.substring(16, 16 + 8);
 
