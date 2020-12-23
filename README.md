@@ -91,19 +91,14 @@ After completely customize SIC43NT Tag with the setting above, each time you tap
 
 #### Step 1 : Creating and managing projects
  
-Google Cloud projects form the basis for creating and using all Google Cloud services. 
-To create and manage Google Cloud project using Google Cloud Console, please follow the step in [Creating and managing projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#creating_a_project)
+You can  create and manage Google Cloud project using Google Cloud Console, please follow the step in [Creating and managing projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#creating_a_project)
 
 #### Step 2 : Creating App Engine 
 
-1. Click "Go to the App Engine dashboard" as the picture below.
-![alt text](https://drive.google.com/file/d/162V8FyL1kdB1iJAd83CozJOuUnDx5aLP/view?usp=sharing)
-
-1. select your project name on top left corner.
-1. click Activate Cloud Shell on top right corner to use browser shell command. The terminal Google Cloud Shell will be shown as the picture below.
-![alt text](https://drive.google.com/file/d/1xjx3INVnODdfwFSvdWd62AOsGZkki6Ud/view?usp=sharing)
-
-1. update all component and continue update press "Y" (Optional)
+1. Click "Go to the [Dashboard page](https://console.cloud.google.com/home?_ga=2.205273744.1217504798.1597994442-2063354042.1597316606)" in the Cloud console
+2. select your project name on top left corner.
+3. click Activate Cloud Shell on top right corner to use browser shell command.
+4. update all component and continue update press "Y" (Optional)
 
 ```
 sudo apt-get update && sudo apt-get --only-upgrade install google-cloud-sdk-bigtable-emulator google-cloud-sdk-datastore-emulator google-cloud-sdk-cbt google-cloud-sdk-pubsub-emulator google-cloud-sdk-app-engine-python-extras google-cloud-sdk-minikube google-cloud-sdk-app-engine-python kubectl google-cloud-sdk-kpt google-cloud-sdk google-cloud-sdk-app-engine-go google-cloud-sdk-firestore-emulator google-cloud-sdk-app-engine-grpc google-cloud-sdk-cloud-build-local google-cloud-sdk-datalab google-cloud-sdk-anthos-auth google-cloud-sdk-kind google-cloud-sdk-spanner-emulator google-cloud-sdk-skaffold google-cloud-sdk-app-engine-java
